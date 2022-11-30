@@ -71,6 +71,8 @@ class TestData(Dataset):
             self.face_detector = detectors.FAN()
         # elif face_detector == 'mtcnn':
         #     self.face_detector = detectors.MTCNN()
+        elif face_detector == 'RetinaFace':
+            self.face_detector = detectors.RetinaFace()
         else:
             print(f'please check the detector: {face_detector}')
             exit()

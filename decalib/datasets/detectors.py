@@ -58,3 +58,14 @@ class MTCNN(object):
 
 
 
+class RetinaFace(object):
+    def __init__(self):
+        from retinaface import RetinaFace as RF
+    def run(self, input):
+        from retinaface import RetinaFace as RF
+        out = RF.detect_faces(input)
+        if out is None:
+            return [0]
+        else:
+            bbox = out['face_1']['facial_area']
+            return bbox, 'bbox'

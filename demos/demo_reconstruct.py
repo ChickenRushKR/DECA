@@ -21,13 +21,14 @@ from scipy.io import savemat
 import argparse
 from tqdm import tqdm
 import torch
-
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from decalib.deca import DECA
 from decalib.datasets import datasets 
 from decalib.utils import util
 from decalib.utils.config import cfg as deca_cfg
 from decalib.utils.tensor_cropper import transform_points
+
 
 def main(args):
     # if args.rasterizer_type != 'standard':
